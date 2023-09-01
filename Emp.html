@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Employee's Daily Report</title>
+                </head>
+                <style>
+
+                    .container {
+                        box-sizing: border-box;
+                        margin: 0;
+                        padding: 0;
+                        background-color: #e6f7ff;
+                        padding: 16px;
+                    }
+                    .header .text-center {
+                        text-align: center;
+                    }
+                    .d-flex {
+                        display: flex;
+                    }
+                    .justify-content-between {
+                        justify-content: space-between;
+                    }
+                    .my-1 {
+                        margin: 4px 0;
+                    }
+                    .first-col {
+                        font-weight: bold;
+                    }
+                    table {
+                        border: 2px solid rgb(49, 49, 49);
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    table thead tr  th {
+                        font-weight: bold;
+                        width: auto;
+                        border: 2px solid rgb(75, 75, 75); 
+                        padding: 4px 0;
+                    }
+
+                    table tbody tr td {
+                        width: auto;
+                        text-align: center;
+                        border: 1.5px solid rgb(49, 49, 49); 
+                        padding: 5px 0;
+                    }
+                    
+                    .align-left {
+                        text-align: left;
+                        padding-left: 10px;
+                    }
+                    
+                </style>
+<body>
+                    <div class="container">
+                        <div class="header">
+                            <h1 class="text-center">Employee's Daily Report</h1>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <strong>Date: {{billdate}}</strong>
+                            <strong>Employee Name: {{empname}}</strong>
+                            <strong>Employee Code: {{empcode}}</strong>
+                        </div>
+                        <div class="d-flex justify-content-between my-1">
+                            <strong>ASM/CSM Name: {{asms}}</strong>
+                            <strong>Store Name: {{branch}}</strong>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                <th>Type</th>
+                                <th>Parameter</th>
+                                <th>Yesterday's</th>
+                                <th>MTD</th>
+                                <th>LMTD</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Sales -->
+                                <tr class="trow">
+                                    <td class="first-col" rowspan="5">Sales</td>
+                                    <td class="align-left">Sales</td>
+                                    <td>{{amount}}</td>
+                                    <td>{{amount_MTD}}</td>
+                                    <td>{{amount_LMTD}}</td>
+                                </tr>
+                                <tr class="trow">
+                                    <td class="align-left">Total Bills</td>
+                                    <td>{{billnumber}}</td>
+                                    <td>{{billnumber_MTD}}</td>
+                                    <td>{{billnumber_LMTD}}</td>
+                                </tr>
+                                <tr class="trow">
+                                    <td class="align-left">AOV</td>
+                                    <td>{{AOV}}</td>
+                                    <td>{{AOV_MTD}}</td>
+                                    <td>{{AOV_LMTD}}</td>
+                                </tr>
+                                <tr class="trow">
+                                    <td class="align-left">ASP</td>
+                                    <td>{{ASP}}</td>
+                                    <td>{{ASP_MTD}}</td>
+                                    <td>{{ASP_LMTD}}</td>
+                                </tr>
+                                <tr class="trow">
+                                    <td class="align-left">BasketSize</td>
+                                    <td>{{BasketSize}}</td>
+                                    <td>{{BasketSize_MTD}}</td>
+                                    <td>{{BasketSize_LMTD}}</td>
+                                </tr>
+                                <!-- Generic -->
+                                <tr class="trow">
+                                    <td class="first-col" >Generic</td>
+                                    <td class="align-left">Generic Sale</td>
+                                    <td >{{gensale}}</td>
+                                    <td>{{gensale_MTD}}</td>
+                                    <td>{{gensale_LMTD}}</td>
+                                </tr>
+                            
+                                <!-- Offer -->
+                                <tr class="trow">
+                                    <td class="first-col" rowspan='2' >Offer</td>
+                                    <td class="align-left">Offer Qty</td>
+                                    <td>{{offerqty}}</td>
+                                    <td>{{offerqty_MTD}}</td>
+                                    <td>{{offerqty_LMTD}}</td>
+                                </tr>
+                                <tr class="trow">
+                                    <td class="align-left">Offer sale</td>
+                                    <td>{{offersale}}</td>
+                                    <td>{{offersale_MTD}}</td>
+                                    <td>{{offersale_LMTD}}</td>
+                                </tr>
+                                <!-- OTC -->
+                                <tr class="trow">
+                                    <td class="first-col" rowspan="2">OTC</td>
+                                    <td class="align-left">OTC Qty</td>
+                                    <td>{{otcqty}}</td>
+                                    <td>{{otcqty_MTD}}</td>
+                                    <td>{{otcqty_LMTD}}</td>
+                                </tr>
+                                <tr class="trow">
+                                    <td class="align-left">OTC Sale</td>
+                                    <td>{{otcsale}}</td>
+                                    <td>{{otcsale_MTD}}</td>
+                                    <td>{{otcsale_LMTD}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </body>
+                </html> 
